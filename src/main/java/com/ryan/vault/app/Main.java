@@ -16,7 +16,8 @@ import java.util.Properties;
 public class Main {
 
     public static void main(String[] args) throws Exception {
-        String configFile = args.length > 0 ? args[0] : "c:/Temp/vault_token.properties";
+        String configFile = args.length > 0 ? args[0] : "./vault_token.properties";
+        //String configFile = args.length > 0 ? args[0] : "c:/Temp/vault_token.properties";
         String secretPath  = args.length > 1 ? args[1] : "myapp/config";
         String secretKey   = args.length > 2 ? args[2] : "password";
 

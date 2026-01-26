@@ -1,6 +1,7 @@
 package com.ryan.vault.secrets;
 
 import com.ryan.vault.secrets.providers.EnvSecretsClient;
+import com.ryan.vault.secrets.providers.PropertiesFileSecretsClient;
 import com.ryan.vault.secrets.providers.VaultAppRoleKvV2Client;
 
 import java.util.Properties;
@@ -26,6 +27,11 @@ public final class SecretsClientFactory {
 
         if ("env".equals(provider)) {
             return new EnvSecretsClient();
+        }
+
+
+        if ("properties".equals(provider) || "file".equals(provider)) {
+            return new PropertiesFileSecretsClient(p);
         }
 
         throw new SecretException("Unknown secrets.provider: " + provider);
