@@ -212,13 +212,13 @@ Take note of the unseal keys and root token displayed.
 Sample:
 ```text
 C:\Users\bulalar1>vault operator init
-Unseal Key 1: u5osw8aJDAhUJQa5hmDVDh5jzAF2xY5JR+68vwNUik/E
-Unseal Key 2: 2Hxzc1LU7DsTUzDmjWcBVK0wKb5Gu/4VoAY+IdePTPWO
-Unseal Key 3: xVzvS/XHfUbNyeSQ8Lzlo99MNEPqc6dbQoCYjpGC9OPo
-Unseal Key 4: BdOlFmcy7X62RaveRm2/nQYD34uPnnrfuoBZ3DWVM+FJ
-Unseal Key 5: WVXwOBtXIMNXFdRYvTHHnLdIvpa5wnTTYirZd964G6Sy
+Unseal Key 1: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Unseal Key 2: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Unseal Key 3: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Unseal Key 4: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Unseal Key 5: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
-Initial Root Token: hvs.kVqcxJKBBtGE86UCFEPkbHVe
+Initial Root Token: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 **NOTE:** Take note of the keys and root token as you cannot recover them again once you close the command prompt window.
 
@@ -228,7 +228,7 @@ vault operator unseal
 ```
 You will see:
 ```text
-Unseal Key (will be hidden): u5osw8aJDAhUJQa5hmDVDh5jzAF2   
+Unseal Key (will be hidden): 
 ```
 Just enter the Unseal key from the **_vault operator init_** in the previous step. Repeat this 3 times with 
 different keys (e.g. Key 1-3) until you see that the vault is unsealed _(you will see Sealed = true on the first unseal commands)_:
@@ -306,7 +306,7 @@ initialization step to login.
   - Sample:
   ```text
     "auth": {
-        "client_token": "hvs.CAESINYjX6tjTGFdUqlzk5JXw4zRRCzoFfK7_3yyIS6kEryEGh4KHGh2cy4ybjJ6emZIZlpuYWRjOG9iMkhRVjJqajY",
+        "client_token": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
         "accessor": "ImilFkRIkEWUtJ5Ew6Szoi0F",
   ```
 - Create a new request to retrieve the secret:
