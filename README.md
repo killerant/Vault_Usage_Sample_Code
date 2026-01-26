@@ -1,3 +1,5 @@
+![Static Badge](https://img.shields.io/badge/Java-red?style=for-the-badge)
+
 # Vault AppRole + KV v2 (Java 8) — Using Factory
 
 This project is a sample of how to use Hashicorp Vault AppRole + KV v2 implementation. This sample is utilizing the factory
