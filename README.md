@@ -61,7 +61,7 @@ Open a different command prompt and configure the vault:
     ```
 - Add a secret to the vault at path `secret/data/myapp/config` (for testing purposes):
     ```bat
-    vault kv put secret/myapp/config username="myuser" password="P@ssw0rd123"
+    vault kv put secret/myapp/config username=<USERNAME_TO_STORE> password=<PASSWORD_TO_STORE>
     ```
 
 ## Config the vault properites file on local machine (e.g. c:/temp/vault_token.properties )
@@ -212,13 +212,13 @@ Take note of the unseal keys and root token displayed.
 Sample:
 ```text
 C:\Users\bulalar1>vault operator init
-Unseal Key 1: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Unseal Key 2: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Unseal Key 3: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Unseal Key 4: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Unseal Key 5: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Unseal Key 1: UNSEAL_KEY_1_PLACEHOLDER
+Unseal Key 2: UNSEAL_KEY_2_PLACEHOLDER
+Unseal Key 3: UNSEAL_KEY_3_PLACEHOLDER
+Unseal Key 4: UNSEAL_KEY_4_PLACEHOLDER
+Unseal Key 5: UNSEAL_KEY_5_PLACEHOLDER
 
-Initial Root Token: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Initial Root Token: TOKEN_PLACEHOLDER
 ```
 **NOTE:** Take note of the keys and root token as you cannot recover them again once you close the command prompt window.
 
@@ -284,7 +284,7 @@ vault write -f auth/approle/role/myapp-role/secret-id
 ```
 Add a secret to the vault at path `secret/data/myapp/config` (for testing purposes):
 ```bat
-vault kv put secret/myapp/config username="myuser" password="P@ssw0rd123"
+vault kv put secret/myapp/config username=USERNAME_TO_STORE password=PASSWORD_TO_STORE
 ```
 **NOTE:** You can try to view the secrets via the UI: `https://127.0.0.1:8200/ui`. Use the root token from the 
 initialization step to login.
@@ -306,7 +306,7 @@ initialization step to login.
   - Sample:
   ```text
     "auth": {
-        "client_token": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "client_token": CLIENT_TOKEN_PLACEHOLDER,
         "accessor": "ImilFkRIkEWUtJ5Ew6Szoi0F",
   ```
 - Create a new request to retrieve the secret:
@@ -325,7 +325,7 @@ initialization step to login.
     "lease_duration": 0,
     "data": {
         "data": {
-            "password": "NEW.P@ssw0rd123",
+            "password": PASSWORD_PLACEHOLDER,
             "username": "myuser"
         },
         "metadata": {
@@ -372,7 +372,7 @@ Create a dedicated truststore
   -file C:\Users\bulalar1\vault-tls\vault.crt ^
   -keystore C:\Users\bulalar1\vault-tls\java8-vault-truststore.jks ^
   -storetype JKS ^
-  -storepass trustPassword
+  -storepass TRUSTSTORE_PASSWORD_TO_USE
 
 ```
 - This will create _java8-vault-truststore.jks_ file in the current directory.
@@ -385,7 +385,7 @@ In Intellij:
 - In the __VM options__ field, add the following options to specify the truststore:
 ```bat
  -Djavax.net.ssl.trustStore=C:\Users\bulalar1\vault-tls\java8_vault-truststore.jks 
- -Djavax.net.ssl.trustStorePassword=trustPassword 
+ -Djavax.net.ssl.trustStorePassword=TRUSTSTORE_PASSWORD_USED_IN_THE_STEP_ABOVE
  -Djavax.net.ssl.trustStoreType=JKS 
  -Djdk.tls.client.protocols=TLSv1.2 
 ```
