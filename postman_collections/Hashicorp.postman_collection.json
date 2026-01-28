@@ -1,0 +1,154 @@
+{
+  "info": {
+    "_postman_id": "241e0dc2-67b6-4bb1-aa53-439079930ead",
+    "name": "Hashicorp",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "5287639"
+  },
+  "item": [
+    {
+      "name": "Retrieve_Secret",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-Vault-Token",
+            "value": "hvs.CAESIG0RD2bvneojGQpoQIJqhHeBGf0fmpvh6coaZVxP5c2sGh4KHGh2cy5md3drVU9sZXBYV09oTm40S2tyNGZNOU0",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8200/v1/secret/data/myapp/config",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8200",
+          "path": [
+            "v1",
+            "secret",
+            "data",
+            "myapp",
+            "config"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Retrieve_Secret SSL",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-Vault-Token",
+            "value": "hvs.CAESIG0RD2bvneojGQpoQIJqhHeBGf0fmpvh6coaZVxP5c2sGh4KHGh2cy5md3drVU9sZXBYV09oTm40S2tyNGZNOU0",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8200/v1/secret/data/myapp/config",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8200",
+          "path": [
+            "v1",
+            "secret",
+            "data",
+            "myapp",
+            "config"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "\r\n{\r\n  \"role_id\": \"425374ad-5300-7544-6f18-0286a07a9126\",\r\n  \"secret_id\": \"9edabc00-4398-d0ed-3399-d5b60c2daa0a\"\r\n}\r\n\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8200/v1/auth/approle/login",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8200",
+          "path": [
+            "v1",
+            "auth",
+            "approle",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login SSL",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "\r\n{\r\n  \"role_id\": \"425374ad-5300-7544-6f18-0286a07a9126\",\r\n  \"secret_id\": \"9edabc00-4398-d0ed-3399-d5b60c2daa0a\"\r\n}\r\n\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8200/v1/auth/approle/login",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8200",
+          "path": [
+            "v1",
+            "auth",
+            "approle",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
